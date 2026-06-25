@@ -1,0 +1,352 @@
+:root {
+  --card: rgb(39, 35, 64);
+  --stroke: #27324a;
+  --muted: #b9c0d6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: black;
+  color: white;
+  font: 20px/1.4 Arial, "Segoe UI", sans-serif;
+
+  /* ✅ optional from lesson: center page on big screens */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ================= HEADER (НЕ ТРОГАЕМ) ================= */
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  z-index: 1;
+}
+
+.logo {
+  height: 30px;
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.site-name {
+  font-size: 35px;
+  line-height: 1;
+}
+
+header a[aria-label="Home"] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================= MENU (НЕ ТРОГАЕМ) ================= */
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+header nav {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: rgb(35, 34, 34);
+  border-top-left-radius: 25px;
+  transition: right 0.7s ease;
+  z-index: 3;
+}
+
+#nav-toggle:checked ~ nav {
+  right: 0;
+}
+
+#nav-toggle:checked ~ .overlay {
+  display: block;
+}
+
+.menu-button,
+.menu-close {
+  font-size: 55px;
+  cursor: pointer;
+  margin: 15px 0 30px;
+  align-self: flex-end;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  display: block;
+  padding: 15px 30px;
+  font-size: 25px;
+  color: inherit;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  transform: scale(1.05);
+}
+
+/* ================= MAIN ================= */
+
+main {
+  padding: 150px 16px;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 90px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  padding: 40px 16px 20px;
+  background: radial-gradient(60% 40% at 50% 0%, rgba(122, 60, 255, 0.25), transparent 60%),
+              radial-gradient(30% 25% at 80% 20%, rgba(35, 217, 183, 0.18), transparent 60%);
+  border-bottom: 1px solid var(--stroke);
+  border-radius: 0 40px 24px 24px;
+}
+
+.hero p {
+  color: var(--muted);
+  margin: 8px 0 18px;
+}
+
+/* ================= GALLERY (BASE FLEX) ================= */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gallery article {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 360px;
+  background: linear-gradient(280deg, rgba(3, 8, 20, 0.85), rgba(17, 36, 85, 0.65));
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  padding: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 24px rgba(122, 60, 255, 0.35);
+}
+
+.gallery img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+/* ================= PRICE + BUTTON ================= */
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 800;
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  padding: 10px;
+  background: #0b1326;
+  margin-top: auto;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  color: whitesmoke;
+  border: 1.5px solid #7aa7ff;
+  background: linear-gradient(45deg, #1f4fbd, #23d9b7);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(35, 217, 183, 0.35);
+}
+
+.btn.small {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* ================= BULLETS ================= */
+
+.bullets {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 16px;
+}
+
+.bullets li {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+/* ================= FAQ ================= */
+
+.faq {
+  max-width: 760px;
+  margin: 12px auto 0;
+  text-align: left;
+}
+
+.faq details {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin: 8px 0;
+}
+
+.faq p {
+  margin: 8px 0 0;
+}
+
+/* ================= CONTACT GRID ================= */
+
+.contacts-grid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+  max-width: 1000px;
+  margin: 20px auto 0;
+}
+
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: left;
+}
+
+@media (min-width: 840px) {
+  .contacts-grid {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+/* ================= MAP ================= */
+
+.map-wrap h3 {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: left;
+  margin: 0 0 8px;
+}
+
+.map {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* ================= FORM ================= */
+
+.mailto-form {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mailto-form fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.mailto-form legend {
+  grid-column: 1 / -1;
+}
+
+.mailto-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted);
+}
+
+.mailto-form input,
+.mailto-form textarea,
+.mailto-form select {
+  background: #0b1326;
+  color: white;
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+}
+
+.mailto-form textarea,
+.mailto-form select {
+  grid-column: 1 / -1;
+}
+
+.mailto-form .btn {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+/* ================= ✅ GRID UPGRADE (NEW FROM LESSON) ================= */
+/* 👉 THIS is your “school proof CSS Grid part” */
+
+@media (min-width: 900px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+}

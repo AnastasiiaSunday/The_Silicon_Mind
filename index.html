@@ -1,0 +1,183 @@
+<!doctype html>
+<!-- HTML5 document declaration -->
+<html lang="en">
+  <!-- Set document language -->
+
+  <head><!-- deescription -->
+
+    <meta charset="UTF-8" />
+    <!-- Ensure proper character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Responsive scaling -->
+    <title>The Silicon Mind — Home</title>
+    <!-- Page title -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Link to external stylesheet -->
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" aria-label="Home">
+        <!-- Clickable logo and site name -->
+        <img src="images/logo.png" alt="The Silicon Mind logo" class="logo" />
+        <!-- Brand logo image -->
+        <span class="site-name">The Silicon Mind</span>
+        <!-- Brand name text -->
+      </a>
+
+      <input id="nav-toggle" type="checkbox" hidden />
+      <!-- Hidden checkbox to toggle navigation -->
+      <label for="nav-toggle" class="menu-button" aria-label="Open menu"
+        >&#9776;</label
+      >
+      <!-- Hamburger icon to open menu -->
+      <label for="nav-toggle" class="overlay"></label>
+      <!-- Dark overlay for  nav -->
+
+      <nav aria-label="Site menu">
+        <!-- Navigation menu -->
+        <label for="nav-toggle" class="menu-close" aria-label="Close menu"
+          >&times;</label
+        >
+        <!-- Close button (×) -->
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <!-- Hero section with headline and subtext -->
+        <h1>Smart-home brand. Clean and simple</h1>
+        <!-- Main heading -->
+        <p>
+          Smart devices that work out of the box - without unnecessary
+          complexity.
+        </p>
+        <!-- Supporting text -->
+      </section>
+
+      <h2 id="new-items">New items</h2>
+      <!--  title  for accessibility -->
+
+      <section class="gallery" aria-labelledby="new-items">
+        <!-- New products gallery -->
+
+    
+      <article>
+      <!-- Product card 1 -->
+        <picture>
+          <img
+            src="images/21-motion-sensor-lights.png"
+            alt="Motion Sensor Lights">
+        </picture>
+
+        <h3>Motion Sensor Lights</h3>
+
+        <div class="price">
+          <span>CHF 200</span>
+          <a href="catalog.html" class="btn small">More details</a>
+        </div>
+      </article>
+
+      <article>
+        <!-- Product card 2 -->
+        <picture>
+          <img
+            src="images/17-smart-plugs.png"
+            alt="smart-plugs">
+        </picture>
+
+        <h3>Smart Plugs</h3>
+
+        <div class="price">
+          <span>CHF 199</span>
+          <a href="catalog.html" class="btn small">More details</a>
+        </div>
+      </article>
+
+      <article>
+        <!-- Product card 3 -->
+        <picture>
+          <img
+            src="images/8-smart-fridge-with-display.png"
+            alt="Touchless trash bin">
+        </picture>
+
+        <h3>Smart Fridge With Display</h3>
+
+        <div class="price">
+          <span>CHF 149</span>
+          <a href="catalog.html" class="btn small">More details</a>
+        </div>
+      </article>
+
+      <article>
+        <!-- Product card 4 -->
+        <picture>
+          <img
+            src="images/16-smart-switches.png"
+            alt="smart-switches">
+        </picture>
+
+        <h3>Smart Switches</h3>
+
+        <div class="price">
+          <span>CHF 289</span>
+          <a href="catalog.html" class="btn small">More details</a>
+        </div>
+      </article>
+ 
+
+      <h2>Why is this convenient?</h2>
+      <ul class="bullets">
+        <!-- Bullet point list with icons -->
+        <li>⚡ Quick start - it's simple</li>
+        <li>🔒 Local control and privacy</li>
+        <li>🧩 Compatibility with different devices</li>
+      </ul>
+
+      <h2 id="FAQ">FAQ</h2>
+      <section class="faq">
+        <!-- Each FAQ in collapsible block -->
+        <details>
+          <!-- collapsible section -->
+          <summary>Do devices work without internet?</summary>
+          <!-- Clickable question header -->
+          <p>
+            Core automations run locally. Internet is only for remote control
+            and updates.
+          </p>
+          <!-- Answer text -->
+        </details>
+
+        <details>
+          <summary>How do I add a new device?</summary>
+          <p>
+            Open the app → “Add device” → scan the QR → pick a room. About one
+            minute.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I mix different brands?</summary>
+          <p>
+            Yes, devices use shared standards, so lights, plugs, and sensors can
+            work together.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is my data private?</summary>
+          <p>
+            Traffic is encrypted. Local control keeps routine actions inside
+            your home network.
+          </p>
+        </details>
+      </section>
+    </main>
+  </body>
+</html>

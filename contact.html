@@ -1,0 +1,223 @@
+<!DOCTYPE html>         <!-- HTML5 document declaration -->               
+<html lang="en">        <!-- Set document language -->              
+
+
+<head>                                
+  <meta charset="UTF-8">          <!-- Ensure proper character encoding -->                                               
+  <meta name="viewport" content="width=device-width, initial-scale=1">      <!-- Responsive scaling -->   
+  <title>The Silicon Mind — Home</title>              <!-- Page title -->                         
+  <link rel="stylesheet" href="style.css">          <!-- Link to external stylesheet -->                            
+</head>
+
+
+<body>               
+
+<header>
+      <a href="index.html" aria-label="Home">
+        <!-- Clickable logo and site name -->
+        <img src="images/logo.png" alt="The Silicon Mind logo" class="logo" />
+        <!-- Brand logo image -->
+        <span class="site-name">The Silicon Mind</span>
+        <!-- Brand name text -->
+      </a>
+
+      <input id="nav-toggle" type="checkbox" hidden />
+      <!-- Hidden checkbox to toggle navigation -->
+      <label for="nav-toggle" class="menu-button" aria-label="Open menu"
+        >&#9776;</label
+      >
+      <!-- Hamburger icon to open menu -->
+      <label for="nav-toggle" class="overlay"></label>
+      <!-- Dark overlay for  nav -->
+
+      <nav aria-label="Site menu"> <!-- Navigation menu -->
+        <label for="nav-toggle" class="menu-close" aria-label="Close menu">&times;
+        </label>
+
+        <ul> <!-- RELATIVE LINKS -->
+          <li><a href="index.html">Home</a></li>  
+          <li><a href="catalog.html">Catalog</a></li><!--innerhalb derselben Webseite-->
+          <li><a href="contact.html">Contact</a></li> 
+          <li><section id="kontakt" class="contact-card"></li> <!--Anker Links,springen zu einem bestimmten Abschnitt auf derselben Seite-->
+        </ul>
+      </nav>
+</header>
+
+
+
+<main>
+
+  <section class="hero">  <!-- Hero section with headline and subtext -->
+    <h1>Contact</h1>   <!-- Main heading -->
+  </section>
+
+
+  <div class="contacts-grid">    <!-- Two-column responsive layout -->
+
+    <section class="contact-card">     <!-- Contact info and form -->
+      <h3>Contact us</h3>
+
+      <p><strong>Email:</strong>
+        <a class="accent" href="mailto:info@shop.ch">info@shop.ch</a></p> <!--E-Mail Links-->
+
+      <p><strong>Telephone:</strong>
+        <a class="accent" href="tel:+41000000000">
+          +41 00 000 00 00</a></p>  
+          
+      <p><strong>Address:</strong>
+        <span class="accent">Basel, Bahnhofstrasse 1</span>
+      </p>  
+    
+        <h3>Quick request</h3>
+
+
+
+        <!--Eingabefelder verbindet-->
+      <form class="mailto-form" action="mailto:info@shop.ch" method="get"> 
+
+        <fieldset>  <!-- Gruppiert zusammengehörige Eingabefelder-->
+          <legend>Product request</legend> <!-- Überschrift für ein fieldset -->
+
+          <label for="userid">User ID *</label> <!--Definiert ein Eingabefeld--> 
+            <input
+              type="text"
+              id="userid"
+              name="userid"
+              required
+              placeholder="12345">
+
+          <label> 
+            Full name *
+            <input type="text" name="name" required placeholder="John Doe" autofocus> <!--Typ des Eingabefeldes-->
+          </label>
+
+          <label>
+            Email *
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+      
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="+41 ..." pattern="\+?[0-9 ]+">
+          </label>
+
+          <label>
+            Delivery date
+            <input type="date" name="delivery_date">
+          </label>
+
+          <label>
+            Product category *
+            <select name="category" required> <!--Dropdown-Liste mit Auswahlmöglichkeiten-->
+              <option value="">-- choose product --</option> <!--Einzelne Auswahlmöglichkeit in einer Liste-->
+              <option value="water_sensor">Water quality detector</option>
+              <option value="doorbell">Smart video doorbell</option>
+              <option value="trash_bin">Touchless trash bin</option>
+              <option value="composter">Kitchen composter</option>
+            </select>
+          </label>
+
+          <label>
+            Quantity
+            <input type="number" name="quantity" min="1" max="5" value="1">
+          </label>
+
+          <label>
+            Budget (CHF)
+            <input type="number" name="budget" min="20" max="2000" step="2">
+          </label>
+
+          <label>
+            Website (optional)
+            <input type="url" name="website" placeholder="https://example.com">
+          </label>
+
+          <label>
+            Password (for account)
+            <input type="password" name="password" minlength="6" maxlength="20" placeholder="min 6 characters">
+          </label>
+
+          <label>
+            Message *
+            <textarea name="message" rows="5" minlength="10" maxlength="300" required placeholder="Tell us what you need..."></textarea>
+          </label>
+
+          <label>
+            Priority
+            <input type="text" name="priority" value="Normal" readonly>
+          </label>
+
+          <label>
+            Contact method
+            <select name="contact_method">
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>Extra options</legend>
+
+            <label>
+              <input type="checkbox" name="extras" value="installation">
+              Installation service
+            </label>
+
+            <label>
+              <input type="checkbox" name="extras" value="warranty">
+              Extended warranty
+            </label>
+
+            <label>
+              <input type="checkbox" name="extras" value="gift" disabled>
+              Gift wrapping (disabled)
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Device type preference</legend>
+
+            <label>
+              <input type="radio" name="device_type" value="indoor" checked>
+              Indoor
+            </label>
+
+            <label>
+              <input type="radio" name="device_type" value="outdoor">
+              Outdoor
+            </label>
+          </fieldset>
+
+          <button type="submit" class="btn">Send request</button> <!--Erstellt einen klickbaren Button-->
+
+        </fieldset>
+
+      </form>
+
+    </section>
+
+    <!--  ------ Map section ------ -->
+
+    <section class="map-wrap">  
+      <h3>Map — Basel</h3>
+
+      <!--ABSOLUTE LINKS ,auf eine vollständige Webadresse (Domain)-->
+      <iframe 
+        class="map" 
+        title="Basel on Google Maps"  
+        src="https://www.google.com/maps?q=Basel&output=embed"> 
+      </iframe>
+      <p> <!--Links im neuen Tab-->
+        <a href="https://www.google.com/maps?q=Basel" 
+          target="_blank"
+          rel="noopener noreferrer">
+          Open map in new tab
+        </a>
+      </p>
+    </section>
+
+  </div>
+
+</main>
+</body>
+</html>
