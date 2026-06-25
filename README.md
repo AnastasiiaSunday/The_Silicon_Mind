@@ -138,7 +138,7 @@ Keine Installation erforderlich.
 
 ---
 
-## 👨 Autor
+##  Autor
 
 Schülerprojekt zur Webentwicklung  
 Schwerpunkt: Responsive Design, CSS Grid und Flexbox  
