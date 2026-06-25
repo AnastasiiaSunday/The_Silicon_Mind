@@ -340,8 +340,6 @@ h2 {
   width: 100%;
 }
 
-/* ================= ✅ GRID UPGRADE (NEW FROM LESSON) ================= */
-/* 👉 THIS is your “school proof CSS Grid part” */
 
 @media (min-width: 900px) {
   .gallery {
